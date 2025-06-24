@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-box</title>
+  <style>
+    *,
+    *::before,
+    *::after{
+      margin: 0px;
+      box-sizing: border-box;
+      padding: 0px;
+    }
+
+    .container
+    { 
+      background-color: #838383;
+      width: 2000px;
+      height:2000px;
+      
+    }
+
+    .Chinese-board{
+ 
+      width: 1200px;
+      height: 1400px;
+      background-color: #fff;
+      border: 3px solid #000;
+     
+    
+    }
+
+    .row{
+      width: 800px;
+      height: auto;
+      /* border: 1px solid #000; */
+      margin: 0px;
+    }
+  
+
+    .col{
+      margin: 0px;
+      background: #fff ;
+      border: 1px solid #000000;
+    }
+    /* flex-container */
+    .flex{
+      margin: 200px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      /* gap: 0px; */
+      /* row-gap: 15px; */
+      /* column-gap: 10px; */
+    }
+    .w1{
+      width: 100px;
+    }
+    .h1{
+      height: 100px;
+    }
+
+
+    .c-flex{
+      display: flex;
+      flex-direction: row;
+      flex-wrap:nowrap;
+      z-index: 10;
+    }
+    .c-row{
+      width: 880px;
+      height: auto;
+      /* border: 1px solid #000; */
+      margin: 0px;
+    }
+    .w80{
+      width: 80px;
+ 
+    }
+    .h80{
+      height: 80px;
+    }
+
+    .bk-p{
+      font-family: '標楷體';
+      font-size: 50px;
+      font-weight: 900px;
+       margin: 10px;
+    }
+    .re-p{
+      font-family: '標楷體';
+      font-size: 50px;
+      font-weight: 900px;
+      margin: 10px;
+      color: red;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="Chinese-board" style="position: relative;">
+
+     <!-- 唐伯虎點秋香 -->
+      <!-- <div class="row" style=" width: 1200px; background-color: #8e8e8e; display: flex; flex-direction:row; justify-content: space-between; ">
+        <div class="col w80 h80" style=" background-color: #7d7d7d; "></div>
+        <div class="col w80 " style=" background-color: #6a6a6a; "></div>
+      </div> -->
+
+      <div class="row flex">
+        <!-- 棋子 - 黑-->
+          <div class="c-row c-flex " style="position: absolute; top:150px; left:160px; gap:20px; flex-wrap: nowrap; ">
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">車</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">馬</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">象</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">士</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">將</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">士</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">象</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">馬</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">車</p>
+            </div>
+          </div>
+
+          <div class="c-row c-flex " style="position: absolute; top:355px; left:160px;  flex-wrap: nowrap; justify-content:space-between; padding: 0px 100px 0px 100px;">
+            <div class="col w80 h80 " style="border-radius: 50%; ">
+              <p class="bk-p">包</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">包</p>
+            </div>
+          </div>
+
+
+           <div class="c-row c-flex " style="position: absolute; top:460px; left:160px; gap:120px; flex-wrap: nowrap; ">
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">卒</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">卒</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">卒</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">卒</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="bk-p">卒</p>
+            </div>
+          </div>
+
+          <!-- 棋子 - 紅-->
+
+                   <div class="c-row c-flex " style="position: absolute; top:1060px; left:160px; gap:20px; flex-wrap: nowrap; ">
+            <div class="col w80 h80" style="border-radius: 50%; ">
+              <p class="re-p">俥</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">傌</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">相</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">仕</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">帥</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">仕</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">相</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">傌</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">俥</p>
+            </div>
+          </div>
+
+          <div class="c-row c-flex " style="position: absolute; top:860px; left:160px;  flex-wrap: nowrap; justify-content:space-between; padding: 0px 100px 0px 100px;">
+            <div class="col w80 h80 " style="border-radius: 50%; ">
+              <p class="re-p">炮</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">炮</p>
+            </div>
+          </div>
+
+
+           <div class="c-row c-flex " style="position: absolute; top:750px; left:160px; gap:120px; flex-wrap: nowrap; ">
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">兵</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">兵</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">兵</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">兵</p>
+            </div>
+            <div class="col w80 h80" style="border-radius: 50%;">
+              <p class="re-p">兵</p>
+            </div>
+          </div>
+
+
+          <!-- 棋盤 -->
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1">
+          
+        </div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1">
+          <hr style="transform: rotate(45deg); width: 280px; margin: 98px 0px 0px -41px; border-color: #000;">
+        </div>
+        <div class="col w1 h1">
+          <hr style="transform: rotate(-45deg); width: 280px; margin: 98px 0px 0px -140px; border-color: #000;">
+        </div>
+        <div class="col w1 h1">
+        </div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+
+        <div id="container02">
+          <div class="row ">
+            <div class="col h1" style=" display: flex; flex-direction: row; justify-content: space-around; ">
+              <div class="col " style="height: 20px; border: 0px; font-size: 80px; font-family: '標楷體';">楚河</div>
+              <div class="col " style="height: 20px; border: 0px; font-size: 80px; font-family: '標楷體';">漢界</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+         <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1">
+          <hr style="transform: rotate(45deg); width: 280px; margin: 98px 0px 0px -41px; border-color: #000;">
+        </div>
+        <div class="col w1 h1">
+          <hr style="transform: rotate(-45deg); width: 280px; margin: 98px 0px 0px -140px; border-color: #000;">
+        </div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+        <div class="col w1 h1"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script>
+  const grid = document.getElementById('grid');
+  const numberOfItems = 27; // 你有 27 個 div
+  for (let i = 0; i < numberOfItems; i++) {
+    const div = document.createElement('div');
+    div.className = 'col w1 h1';
+    div.textContent = '';
+    grid.appendChild(div);
+  }
+</script> -->
+</body>
+</html>
